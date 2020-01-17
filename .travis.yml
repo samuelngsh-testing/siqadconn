@@ -7,7 +7,7 @@ jobs:
       before_install:
         - choco install python --version 3.8.0
         - choco install swig zip
-        - choco install boost-msvc-12 boost msvc-14.1
+        - choco install boost-msvc-12 boost-msvc-14.1
         - export PATH="/c/Python38:/c/Python38/Scripts:$PATH"
 
 install:
