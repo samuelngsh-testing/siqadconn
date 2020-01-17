@@ -9,20 +9,20 @@ jobs:
         - choco install swig zip
         - export PATH="/c/Python38:/c/Python38/Scripts:$PATH"
 
-  install:
-    - python -m pip install cibuildwheel==1.1.0 cmake scikit-build
+install:
+  - python -m pip install cibuildwheel==1.1.0 cmake scikit-build
 
-  script:
-    - python -m cibuildwheel --output-dir wheelhouse
-    - ls
-    - zip -r wheelhouse.zip wheelhouse
-    - ls
-  deploy:
-    provider: releases
-    api_key:
-      secure: Ckuaavh64vpBm9AHv+rgLNwdM6z4Op8C6CAJvSeC6pnmOvgOtfpmo27Y0cDdm0eEhuejbJrXg8PSr4LaeuBQBALLmhlVVvAVF/7So4Vy33WYYrAOfY6kDCKiT6L6LcvafzdlLf4+hGV5ek64ovPLH53WoDCqwKX0dvTL1j+IunZF7Rw+vEZ3muUG+OVvvoF1zUaiZ7+wd/vZvyNc6ScRy7VJOrNR+QX0NyiA2cirHAjAANh9l3czfRqUIYSc4CnR/oaK+G9OqZj/YFDdRIlM5IPsW+0qguQ67WWaBzPRhRuvgH8bfUi0HbXTZrv2fkY+jmeLq5WACKNuqui41lmtf/eMO3IjPr1Vmug67SRVhkkZJN4ma2kj9kWAusN1riupzJyTeYVcQ+Uhjzt7hpL/FT88yqXHEgDaU3eYcgpSHm0AaV559vi9gkDEyyoTtL0veaoND3vyx+Smq8VCAp8ZGQkeqRJ5QWu2HLlGoEKbd789JsJNQTmmhtDV/yNEDBsleVPzi6T1JDmCsghQCmxcxor2OBO73tR7ja/ptmIl3NRekx2b7ek4dEfzy01t0vuPQp/GM9PAjlXq6wko3Y1pK1/jnjTM1B5aI60Hhe0PX/Fepx1uqMnQseCpDs2Nf/Xy8A32uQT/FQW4EhrbPDPB7Fvsh77AYn0qLW7MAzKAXFY=
-    file: wheelhouse.zip
-    skip_cleanup: true
-    draft: true
-    on:
-      repo: samuelngsh-testing/siqadconn
+script:
+  - python -m cibuildwheel --output-dir wheelhouse
+  - ls
+  - zip -r wheelhouse.zip wheelhouse
+  - ls
+deploy:
+  provider: releases
+  api_key:
+    secure: Ckuaavh64vpBm9AHv+rgLNwdM6z4Op8C6CAJvSeC6pnmOvgOtfpmo27Y0cDdm0eEhuejbJrXg8PSr4LaeuBQBALLmhlVVvAVF/7So4Vy33WYYrAOfY6kDCKiT6L6LcvafzdlLf4+hGV5ek64ovPLH53WoDCqwKX0dvTL1j+IunZF7Rw+vEZ3muUG+OVvvoF1zUaiZ7+wd/vZvyNc6ScRy7VJOrNR+QX0NyiA2cirHAjAANh9l3czfRqUIYSc4CnR/oaK+G9OqZj/YFDdRIlM5IPsW+0qguQ67WWaBzPRhRuvgH8bfUi0HbXTZrv2fkY+jmeLq5WACKNuqui41lmtf/eMO3IjPr1Vmug67SRVhkkZJN4ma2kj9kWAusN1riupzJyTeYVcQ+Uhjzt7hpL/FT88yqXHEgDaU3eYcgpSHm0AaV559vi9gkDEyyoTtL0veaoND3vyx+Smq8VCAp8ZGQkeqRJ5QWu2HLlGoEKbd789JsJNQTmmhtDV/yNEDBsleVPzi6T1JDmCsghQCmxcxor2OBO73tR7ja/ptmIl3NRekx2b7ek4dEfzy01t0vuPQp/GM9PAjlXq6wko3Y1pK1/jnjTM1B5aI60Hhe0PX/Fepx1uqMnQseCpDs2Nf/Xy8A32uQT/FQW4EhrbPDPB7Fvsh77AYn0qLW7MAzKAXFY=
+  file: wheelhouse.zip
+  skip_cleanup: true
+  draft: true
+  on:
+    repo: samuelngsh-testing/siqadconn
