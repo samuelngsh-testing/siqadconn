@@ -7,12 +7,15 @@ jobs:
       before_install:
         - choco install python --version 3.8.0
         - choco install swig zip
+        - choco install boost-msvc-12 boost msvc-14.1
         - export PATH="/c/Python38:/c/Python38/Scripts:$PATH"
 
 install:
-  - python -m pip install cibuildwheel==1.1.0 cmake scikit-build
+  #- python -m pip install cibuildwheel==1.1.0 cmake scikit-build
+  - python -m pip install cibuildwheel==1.1.0 scikit-build
 
 script:
+  - ls
   - python -m cibuildwheel --output-dir wheelhouse
   - ls
   - zip -r wheelhouse.zip wheelhouse
