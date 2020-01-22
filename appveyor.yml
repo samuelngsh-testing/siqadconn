@@ -1,6 +1,3 @@
-build_cloud:
-  - NIKA-W10 Docker
-
 image:
   - Visual Studio 2017
 environment:
